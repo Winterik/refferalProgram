@@ -10,13 +10,10 @@ Copy trade = 2% == 0.02
 lvlResult = [0, 0, 0, 0, 0, 0, 0, 0, 0]
 # Уровень пользователя
 userLevel = ''
-# Процент комиссии за операцию
+# Процент комиссии за тип операции
 limitOrder, sniping, copyTrade = 0.005, 0.01, 0.02
-# Тип операции
-platformAction = ['limit order', 'sniping', 'copy trade']
 # Уровни и сумма покупки
 reffUserPercentLevel = [
-    platformAction[0],
     ['1', 1, 10, 20, 50, 100, 1000],
     ['2', 1, 10, 20, 50, 100, 1000],
     ['3', 1, 10, 20, 50, 100, 1000],
