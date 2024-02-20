@@ -12,14 +12,12 @@ userLvl = 0
 line = 1
 # Процент комиссии за тип операции
 limitOrder, sniping, copyTrade = 0.005, 0.01, 0.02
-# Тип операции
-platformAction = ['limit order', 'sniping', 'copy trade']
 # Юзер, уровень, сумма операции
 userInfo = [
-    [1, 5, 0], # 30%
-    [2, 1, 0], # 10%
-    [3, 3, 0], # 30%
-    [4, 2, 0], # 15%
+    [1, 5, 0],  # 30%
+    [2, 1, 0],  # 10%
+    [3, 3, 0],  # 30%
+    [4, 2, 0],  # 15%
     [5, 1, 1],
     [6, 1, 0],
     [7, 1, 0],
@@ -54,9 +52,13 @@ for i in userInfo:
     if i[0] < buyer[0]:
         if line == 1:
             line += 1
-            print(f'Сумма реферальной награды за первую линию равна: ${round((buyer[2] * limitOrder) * levels[i[1]], 5)}')
+            print(f'Сумма реферальной награды за первую линию равна: ${
+            round((buyer[2] * limitOrder) * levels[i[1]], 5)
+            }')
         else:
-            if userLvl >= i[1]: # если уровень
+            if userLvl >= i[1]:  # если уровень операнда больше, чем уровень реферала, то он ничего не получает
                 continue
             else:
-                print(f'Сумма реферальной награды для юзера {i[0]} равна: ${round((buyer[2] * limitOrder) * (levels[i[1]] - levels[buyer[1]]), 5)}')
+                print(f'Сумма реферальной награды для юзера {i[0]} равна: ${
+                round((buyer[2] * limitOrder) * (levels[i[1]] - levels[buyer[1]]), 5)
+                }')
